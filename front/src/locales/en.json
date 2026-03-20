@@ -1,0 +1,24 @@
+{
+    "app": {
+        "home": "Home",
+        "title": "G6 Editor",
+        "description": "A visual graph editor based on G6, built with React and TypeScript.",
+        "welcome": "Welcome to G6 Editor!"
+    },
+    "menu": {
+        "file": "File",
+        "edit": "Edit",
+        "view": "View",
+        "help": "Help"
+    },
+    "buttons": {
+        "save": "Save",
+        "load": "Load",
+        "reset": "Reset"
+    },
+    "messages": {
+        "saveSuccess": "Graph saved successfully!",
+        "loadSuccess": "Graph loaded successfully!",
+        "resetConfirm": "Are you sure you want to reset the graph?"
+    }
+}
