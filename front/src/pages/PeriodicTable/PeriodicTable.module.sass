@@ -1,0 +1,17 @@
+.main
+    .wrap
+        .table
+            +flex(center, center, column)
+            width: 100%
+            .top
+                width: 100%
+                display: grid
+                grid-template-columns: 1fr repeat(10, 2fr)
+                grid-template-rows: 1fr repeat(7, 2fr)
+                gap: 10px
+                .period
+                    +flex(center, center, column)
+
+                .group
+                    +flex(center, center, column)
+            .bottom
