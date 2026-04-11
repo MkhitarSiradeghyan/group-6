@@ -1,0 +1,47 @@
+.main
+    height: 100vh
+    .wrap
+        height: 100%
+        display: grid
+        grid-template-columns: auto 1fr
+        .model
+            height: 100%
+            aspect-ratio: 1 / 1
+            .atom
+                height: 100%
+                position: relative
+                .orbit
+                    aspect-ratio: 1 / 1
+                    border: 1px solid #fff1
+                    +pos_center
+                    border-radius: $radius-full
+                    animation: electron linear infinite
+                    .electron
+                        +pos_center
+                        width: 3px
+                        height: 100%
+                        .el_in
+                            width: 100%
+                            aspect-ratio: 1 / 1
+                            background: #0ff
+                            border-radius: $radius-full
+                            translate: 0 -50%
+                            box-shadow: 0 0 20px 2px #0ff
+                .proton
+                    width: 60px
+                    aspect-ratio: 1 / 1
+                    background: #f00
+                    border-radius: $radius-full
+                    +pos_center
+                    +flex(center, center)
+                    box-shadow: 0 0 15px 3px #f00
+        .properties
+        .desc
+            grid-column: span 2
+
+@keyframes electron
+    0%
+        rotate: 0
+    100%
+        rotate: 1turn
+        
