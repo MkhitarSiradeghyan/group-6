@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Hero.module.sass";
 import Container from "./../Container/Container";
-import hero from "@/assets/img/hero.jpg";
+import hero from "@/assets/img/hero.png";
 
 const Hero = () => {
   return (

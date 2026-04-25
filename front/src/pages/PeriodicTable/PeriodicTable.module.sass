@@ -1,12 +1,17 @@
 .main
+    height: 100vh
     .wrap
+        height: 100%
+        +flex(center, center)
         .table
             +flex(center, center, column)
-            width: 100%
+            gap: 30px
+            height: 90vh
+            aspect-ratio: 18 / 10
             .top
                 width: 100%
                 display: grid
-                grid-template-columns: 1fr repeat(10, 2fr)
+                grid-template-columns: 1fr repeat(18, 2fr)
                 grid-template-rows: 1fr repeat(7, 2fr)
                 gap: 10px
                 .period
@@ -14,3 +19,8 @@
                 .group
                     +flex(center, center, column)
             .bottom
+                height: 150px
+                display: grid
+                grid-template-columns: repeat(15, 1fr)
+                grid-template-rows: repeat(2, 1fr)
+                gap: 10px

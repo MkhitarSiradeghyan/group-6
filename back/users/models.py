@@ -1,8 +1,12 @@
 from django.db import models
 
 class User(models.Model):
-    name = models.CharField(max_length=255, blank=True)
-    age = models.PositiveIntegerField(max_digits=3, blank=True)
-    is_debil = models.BooleanField(default=True)
-    bio = models.TextField(max_length=255, null=True)
+    firstname = models.CharField(max_length=255, blank=True)
+    lastname = models.CharField(max_length=255, blank=True)
+    birth = models.PositiveIntegerField(max_digits=3, blank=True)
+    email = models.EmailField(unique=True)
+    
+    
+    def __str__(self):
+        return self.name
     

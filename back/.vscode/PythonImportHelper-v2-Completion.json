@@ -97,14 +97,6 @@
         "documentation": {}
     },
     {
-        "label": "HttpResponse",
-        "importPath": "django.http",
-        "description": "django.http",
-        "isExtraImport": true,
-        "detail": "django.http",
-        "documentation": {}
-    },
-    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -154,7 +146,7 @@
         "kind": 5,
         "importPath": "main.settings",
         "description": "main.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n]",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',",
         "detail": "main.settings",
         "documentation": {}
     },
@@ -163,7 +155,7 @@
         "kind": 5,
         "importPath": "main.settings",
         "description": "main.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n]\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'rest_framework',\n    'users',\n]",
         "detail": "main.settings",
         "documentation": {}
     },
@@ -172,7 +164,25 @@
         "kind": 5,
         "importPath": "main.settings",
         "description": "main.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'main.urls'",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nREST_FRAMEWORK = {",
+        "detail": "main.settings",
+        "documentation": {}
+    },
+    {
+        "label": "REST_FRAMEWORK",
+        "kind": 5,
+        "importPath": "main.settings",
+        "description": "main.settings",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_AUTHENTICATION_CLASSES': (\n        'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}\nAUTH_USER_MODEL = 'users.User'\nROOT_URLCONF = 'main.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',",
+        "detail": "main.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_USER_MODEL",
+        "kind": 5,
+        "importPath": "main.settings",
+        "description": "main.settings",
+        "peekOfCode": "AUTH_USER_MODEL = 'users.User'\nROOT_URLCONF = 'main.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,\n        'OPTIONS': {\n            'context_processors': [\n                'django.template.context_processors.request',",
         "detail": "main.settings",
         "documentation": {}
     },
@@ -298,7 +308,7 @@
         "kind": 6,
         "importPath": "users.models",
         "description": "users.models",
-        "peekOfCode": "class User(models.Model):\n    name = models.CharField(max_length=255, blank=True)\n    age = models.PositiveIntegerField(max_digits=3, blank=True)\n    is_debil = models.BooleanField(default=True)\n    bio = models.TextField(max_length=255, null=True)",
+        "peekOfCode": "class User(models.Model):\n    firstname = models.CharField(max_length=255, blank=True)\n    lastname = models.CharField(max_length=255, blank=True)\n    birth = models.PositiveIntegerField(max_digits=3, blank=True)\n    email = models.EmailField(unique=True)\n    def __str__(self):\n        return self.name",
         "detail": "users.models",
         "documentation": {}
     },
@@ -307,17 +317,8 @@
         "kind": 5,
         "importPath": "users.urls",
         "description": "users.urls",
-        "peekOfCode": "urlpatterns = [\n    path('login/', login)\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"login/\"),\n    path(\"register/\")\n]",
         "detail": "users.urls",
-        "documentation": {}
-    },
-    {
-        "label": "login",
-        "kind": 2,
-        "importPath": "users.views",
-        "description": "users.views",
-        "peekOfCode": "def login(request):\n    return HttpResponse(\"Logged in successfully\")",
-        "detail": "users.views",
         "documentation": {}
     },
     {
