@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import PeriodicTable from "./pages/PeriodicTable/PeriodicTable";
 import ElementPage from "./pages/ElementPage/ElementPage";
 import Layout from "./layouts/Layout/Layout";
+import Register from "./pages/Register/Register";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Routes>
         <Route element={<Layout/>}>
           <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register/>} />
           <Route path="/periodic-table" element={<PeriodicTable />} />
           <Route path="/element/:number" element={<ElementPage />} />
         </Route>

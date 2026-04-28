@@ -4,7 +4,7 @@ import s from './Title.module.sass'
 const Title = ({children, level, styles}) => {
 const Tag = `h${level}`
   return (
-    <Tag style={styles}>{children}</Tag>
+    <Tag className={s.title} style={styles}>{children}</Tag>
   )
 }
 
